@@ -3,8 +3,8 @@ description: "AraSentEval 2026: A Shared Task on Sentiment Analysis and Swapping
 theme: jekyll-theme-cayman
 github:
   is_project_page: true
-  repository_url: ""
-  repository_name: "AraSentEval 2026"
+  repository_url: "https://forms.gle/VnWPc11hGTCFXAYJ9"
+  repository_name: "Registration Open"
 markdown:
   kramdown:
     auto_ids: false  # This disables automatic heading IDs

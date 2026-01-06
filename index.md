@@ -64,6 +64,7 @@ We will adhere to the tentative timeline proposed by the OSACT7 organizers.
 *   **Shadi Abudalfa**, King Fahd University of Petroleum and Minerals, KSA
 *   **Maram Alharbi**, Lancaster University, UK
 *   **Mo El-Haj**, VinUniversity, Vietnam, Lancaster University, UK
+*   **Hamzah Luqman**, King Fahd University of Petroleum and Minerals, KSA
 *   **Salmane Chafik**, UM6P, Morocco
 
 ## Participation Guidelines

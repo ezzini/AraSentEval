@@ -49,7 +49,7 @@ We conducted an internal pilot run for both subtasks to validate the datasets an
 ## 6. Tentative Timeline
 We will adhere to the tentative timeline proposed by the OSACT7 organizers.
 
-*   **January 01, 2026**: Release of training, dev data, and evaluation scripts.
+*   ~~January 01~~**January 12, 2026**: Release of training, dev data, and evaluation scripts.
 *   **February 10, 2026**: Registration deadline and release of test data.
 *   **February 17, 2026**: End of evaluation cycle (test set submission closes).
 *   **February 24, 2026**: Final results released.

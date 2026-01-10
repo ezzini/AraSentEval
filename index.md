@@ -40,9 +40,8 @@ Participants can choose to participate in one or both subtasks. We will use the 
 *   **Output**: A new Arabic sentence that preserves the core meaning of the input but expresses the opposite polarity (e.g., "هذا المطعم سيء للغاية").
 *   **Evaluation**: The ranking will be based on the following automatic metrics:
     *   **Sentiment Style Accuracy**: A baseline sentiment classifier will be used to measure the percentage of outputs with the correct target polarity.
-    *   **Content Preservation**: Semantic similarity will be measured using BERTScore (Zhang et al., 2019) between the input and output sentences.
-    *   **Fluency**: Perplexity score calculated using a large Arabic language model.
-
+    *   **Content Preservation**: Semantic similarity will be measured using BLEU and chrF between the input and output sentences.
+      
 ## 5. Pilot Run Details
 We conducted an internal pilot run for both subtasks to validate the datasets and evaluation methodology. For Subtask 1, an initial version of the dataset was verified in a recently organized shared task at RANLP '2025. For Subtask 2, the dataset was benchmarked using several state-of-the-art Large Language Models, including AceGPT, JAIS, and Llama-3. These models were evaluated in various settings (zero-shot, few-shot, and fine-tuning), confirming the dataset's quality and the task's feasibility. The pilot also highlighted the necessity of combining automatic metrics with human judgment for a fair assessment of NLG quality.
 

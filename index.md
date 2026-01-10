@@ -39,7 +39,7 @@ Participants can choose to participate in one or both subtasks. We will use the 
 *   **Input**: An Arabic sentence and its source polarity (e.g., "هذا المطعم رائع للغاية", positive).
 *   **Output**: A new Arabic sentence that preserves the core meaning of the input but expresses the opposite polarity (e.g., "هذا المطعم سيء للغاية").
 *   **Evaluation**: The ranking will be based on the following automatic metrics:
-    *   **Sentiment Style Accuracy**: A baseline sentiment classifier will be used to measure the percentage of outputs with the correct target polarity.
+    *   **Sentiment Style Accuracy**: A sentiment classifier [CAMeL-Lab/bert-base-arabic-camelbert-da-sentiment](https://huggingface.co/CAMeL-Lab/bert-base-arabic-camelbert-da-sentiment) will be used to measure the percentage of outputs with the correct target polarity.
     *   **Content Preservation**: Semantic similarity will be measured using BLEU and chrF between the input and output sentences.
       
 ## 5. Pilot Run Details

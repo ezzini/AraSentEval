@@ -3,27 +3,27 @@
 ### Hosted with OSACT7 Workshop at LREC 2026
 
 ## 1. Overview of the Proposed Task
+We are happy to share that our AraSentEval shared task has concluded with a big success, totaling 19 final phase participations across the two subtasks.
+
 Sentiment analysis remains a cornerstone of Natural Language Processing (NLP), with critical applications ranging from social media monitoring to customer feedback analysis. While significant progress has been made, the Arabic language presents unique challenges due to its rich morphology and extensive dialectal variation. Most user-generated content, the primary source for sentiment data, is written in dialectal Arabic, which is often under-resourced and differs significantly from Modern Standard Arabic (MSA).
 
 To address these challenges and foster innovation in Arabic NLP, we propose the Shared Task on Sentiment Analysis and Swapping in Arabic (AraSentEval). This task is designed to move beyond standard sentiment classification by evaluating both the understanding and generation of sentiment in diverse Arabic contexts. AraSentEval comprises two distinct but complementary subtasks:
 
 *   **Subtask 1: Arabic Dialect Sentiment Analysis**: A multi-class classification task focused on identifying the sentiment (positive, negative, or neutral) of texts written in various Arabic dialects. This subtask emphasizes the need for robust models that can handle the lexical and syntactic diversity of the Arab world.
-*   **Subtask 2: Arabic Sentiment Swap**: A generative task where participants' systems must rewrite a given sentence to invert its sentiment polarity (e.g., positive to negative) while preserving its core meaning. This challenges models to go beyond surface-level cues and demonstrate a deeper grasp of semantics and syntax. For background and methodological details, please refer to our related paper: [https://link.springer.com/article/10.1007/s10579-025-09895-4](https://link.springer.com/article/10.1007/s10579-025-09895-4). For read-only access, please use the this link: [https://rdcu.be/eV83g](https://rdcu.be/eV83g).
+*   **Subtask 2: Arabic Sentiment Swap**: A generative task where participants' systems must rewrite a given sentence to invert its sentiment polarity (e.g., positive to negative) while preserving its core meaning. This challenges models to go beyond surface-level cues and demonstrate a deeper grasp of semantics and syntax.
 
 ## 2. Motivation for the Task
 The motivation for AraSentEval is twofold. First, there is a persistent need for high-quality benchmarks and models for Arabic dialect sentiment analysis. While previous shared tasks have addressed Arabic sentiment (El-Beltagy et al., 2017; Rosenthal et al., 2017), the dialectal aspect remains a significant hurdle. By providing a new, multi-dialect dataset, we aim to spur the development of models that are more effective on real-world, user-generated data.
 
-Second, the field of Arabic NLP is mature enough to move towards more complex generative tasks. Unlike sentiment classification (Sahmoud et al., 2022), sentiment swapping, a form of text style transfer, is a challenging NLG problem that has been explored in English (Shen et al., 2017) but remains largely untouched for Arabic. This is largely due to the scarcity of high-quality, parallel datasets required to train and robustly evaluate such models. Success in this task has direct applications in data augmentation, controlling the tone of conversational agents, and creative content generation. Subtask 2 pushes the community to develop models with more nuanced generative capabilities for Arabic.
+Second, the field of Arabic NLP is mature enough to move towards more complex generative tasks. Sentiment swapping, a form of text style transfer, is a challenging NLG problem that has been explored in English (Shen et al., 2017) but remains largely untouched for Arabic. This is largely due to the scarcity of high-quality, parallel datasets required to train and robustly evaluate such models. Success in this task has direct applications in data augmentation, controlling the tone of conversational agents, and creative content generation. Subtask 1 pushes the community to develop models with more nuanced generative capabilities for Arabic.
 
 By combining a classification task on diverse dialects with a challenging generative task, AraSentEval will provide a comprehensive benchmark for sentiment understanding and manipulation in Arabic, fostering the development of more sophisticated and practically useful models.
 
 ## 3. Data/Resource Collection and Creation
 The datasets for both subtasks are ready, having been collected and annotated.
 
-*   **Subtask 1 (Dialect Sentiment Analysis)**: The dataset for this task, Multi-Dialect-Sent (MDS-3), currently consists of 3,000 sentences annotated for 3-class sentiment (positive, negative, neutral). The dataset is balanced across five major dialects: Moroccan, Egyptian, Jordanian, and Saudi. The data was sourced from Hotel reviews, then translated and annotated by native speakers of each dialect.
-*   **Subtask 2 (Sentiment Swap)**: The dataset for this task is maily based on MA’AKS (Mughaus et al., 2025), a manually-curated parallel dataset for Arabic text sentiment swap. It consists of sentence pairs in Modern Standard Arabic/Arabic Dialects (Egyptian, Gulf, Levantine, and Maghrebi) where each pair consists of two sentences that share the same core topic but have opposite sentiment polarities (one positive, one negative). The main part of data was manually annotated and cross-validated to ensure high quality in terms of fluency, meaning preservation, and accurate sentiment inversion. The data will be split into training, development, and test sets. To explore part of the shared task dataset, visit: [https://github.com/sabudalfa/ArabicTextSentimentSwap/tree/main](https://github.com/sabudalfa/ArabicTextSentimentSwap/tree/main). 
-
-**Current Status**: The core dataset is ready. We are in the process of expanding it to include more examples and potentially add two more dialects: Jordanian and Yemeni, to further increase the task's diversity and challenge before its official release.
+*   **Subtask 1 (Dialect Sentiment Analysis)**: The dataset for this task, Multi-Dialect-Sent (MDS-3), currently consists of 3,000 sentences annotated for 3-class sentiment (positive, negative, neutral). The dataset is balanced across four major dialects: Moroccan, Egyptian, Jordanian, and Saudi. The data was sourced from Hotel reviews, then translated and annotated by native speakers of each dialect.
+*   **Subtask 2 (Sentiment Swap)**: The dataset for this task is MA’AKS (Mughaus et al., 2025), a manually-curated parallel dataset for Arabic text sentiment swap. It consists of 5,000 sentence pairs in Modern Standard Arabic where each pair consists of two sentences that share the same core topic but have opposite sentiment polarities (one positive, one negative). The data was curated from social media and news commentary and manually annotated and cross-validated to ensure high quality in terms of fluency, meaning preservation, and accurate sentiment inversion. The data will be split into training (4,000 pairs), development (500 pairs), and test (500 pairs) sets.
 
 ## 4. Task Description
 Participants can choose to participate in one or both subtasks. We will use the CodaLab platform for running both subtasks, which will handle submissions and host the official leaderboards.
@@ -32,23 +32,21 @@ Participants can choose to participate in one or both subtasks. We will use the 
 *   **Input**: An Arabic sentence written in a specific dialect.
 *   **Output**: A sentiment label from the set {positive, negative, neutral}.
 *   **Evaluation**: Systems will be evaluated using standard classification metrics.
-    *   **Primary Metric**: Macro F1-Score, to account for any potential class imbalance.
-    *   **Secondary Metrics**: Overall accuracy, as well as precision, recall, and F1-score for each class.
+    *   **Metric**: Macro F1-Score, to account for any potential class imbalance.
 
 ### Subtask 2: Arabic Sentiment Swap
 *   **Input**: An Arabic sentence and its source polarity (e.g., "هذا المطعم رائع للغاية", positive).
 *   **Output**: A new Arabic sentence that preserves the core meaning of the input but expresses the opposite polarity (e.g., "هذا المطعم سيء للغاية").
 *   **Evaluation**: The ranking will be based on the following automatic metrics:
-    *   **Sentiment Style Accuracy**: A sentiment classifier [CAMeL-Lab/bert-base-arabic-camelbert-da-sentiment](https://huggingface.co/CAMeL-Lab/bert-base-arabic-camelbert-da-sentiment) will be used to measure the percentage of outputs with the correct target polarity.
-    *   **Content Preservation**: Semantic similarity will be measured using BLEU and chrF between the input and output sentences.
-      
+    *   **Sentiment Style Accuracy**: A baseline sentiment classifier will be used to measure the percentage of outputs with the correct target polarity.
+
 ## 5. Pilot Run Details
 We conducted an internal pilot run for both subtasks to validate the datasets and evaluation methodology. For Subtask 1, an initial version of the dataset was verified in a recently organized shared task at RANLP '2025. For Subtask 2, the dataset was benchmarked using several state-of-the-art Large Language Models, including AceGPT, JAIS, and Llama-3. These models were evaluated in various settings (zero-shot, few-shot, and fine-tuning), confirming the dataset's quality and the task's feasibility. The pilot also highlighted the necessity of combining automatic metrics with human judgment for a fair assessment of NLG quality.
 
 ## 6. Tentative Timeline
 We will adhere to the tentative timeline proposed by the OSACT7 organizers.
 
-*   ~~January 01~~**January 12, 2026**: Release of training, dev data, and evaluation scripts.
+*   **January 01, 2026**: Release of training, dev data, and evaluation scripts.
 *   **February 10, 2026**: Registration deadline and release of test data.
 *   **February 17, 2026**: End of evaluation cycle (test set submission closes).
 *   **February 24, 2026**: Final results released.
@@ -59,12 +57,15 @@ We will adhere to the tentative timeline proposed by the OSACT7 organizers.
 
 ## Organizers
 *   **Saad Ezzini**, King Fahd University of Petroleum and Minerals, KSA
-*   **Paul Rayson**, Lancaster University, UK
 *   **Shadi Abudalfa**, King Fahd University of Petroleum and Minerals, KSA
 *   **Maram Alharbi**, Lancaster University, UK
-*   **Mo El-Haj**, VinUniversity, Vietnam, Lancaster University, UK
-*   **Hamzah Luqman**, King Fahd University of Petroleum and Minerals, KSA
 *   **Salmane Chafik**, UM6P, Morocco
+*   **Hamzah Luqman**, King Fahd University of Petroleum and Minerals, KSA
+*   **Mo El-Haj**, VinUniversity, Vietnam, Lancaster University, UK
+*   **Paul Rayson**, Lancaster University, UK
+*   **Samaher Alghamdi**, Lancaster University, UK
+*   **Reem Alotaibi**, King Abdulaziz University, KSA
+
 
 ## Participation Guidelines
 *   For participation guidelines, please refer to [Participation Guidelines](guidelines.md).
@@ -75,6 +76,5 @@ We will adhere to the tentative timeline proposed by the OSACT7 organizers.
 *   El-Beltagy, S. R., El Kalamawy, M., & Soliman, A. B. (2017). NileTMRG at SemEval-2017 Task 4: Arabic Sentiment Analysis. In Proceedings of the 11th International Workshop on Semantic Evaluation (SemEval-2017), pages 790–795.
 *   Mughaus, R., Abudalfa, S., Luqman, H., Jibrin, F., Alali, M., Al-Dowayan, N., & Abdelali, A. (2025). MA’AKS: manually-curated parallel dataset for Arabic text sentiment swap. Language Resources and Evaluation.
 *   Rosenthal, S., Farra, N., & Nakov, P. (2017). SemEval-2017 Task 4: Sentiment Analysis in Twitter. In Proceedings of the 11th International Workshop on Semantic Evaluation (SemEval-2017), pages 502–518.
-*   Sahmoud, S., Abudalfa, S., & Elmasry, W. (2022). AT-ODTSA: A Dataset of Arabic Tweets for Open Domain Targeted Sentiment Analysis. International Journal of Computing and Digital Systems, 11(1).
 *   Shen, T., Lei, T., Barzilay, R., & Jaakkola, T. (2017). Style Transfer from Non-Parallel Text by Cross-Alignment. In Advances in Neural Information Processing Systems 30.
 *   Zhang, T., Kishore, V., Wu, F., Weinberger, K. Q., & Artzi, Y. (2020). BERTScore: Evaluating Text Generation with BERT. In Proceedings of the International Conference on Learning Representations.

@@ -50,9 +50,9 @@ We will adhere to the tentative timeline proposed by the OSACT7 organizers.
 *   **February 10, 2026**: Registration deadline and release of test data.
 *   **February 17, 2026**: End of evaluation cycle (test set submission closes).
 *   **February 24, 2026**: Final results released.
-*   **March 10, 2026**: System description paper submissions due.
-*   **March 20, 2026**: Notification of acceptance.
-*   **March 30, 2026**: Camera-ready versions due.
+*   **March 7, 2026**: System description paper submissions due.
+*   **March 12, 2026**: Notification of acceptance.
+*   **March 20, 2026**: Camera-ready versions due.
 *   **May 2026 (TBC)**: Main Conference (LREC 2026).
 
 ## Organizers
